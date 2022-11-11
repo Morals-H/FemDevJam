@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 963725251459839392}
   - component: {fileID: 5405947567741125329}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundPlant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 6219594774112973599}
   - component: {fileID: 4271635970689230837}
   - component: {fileID: 4630486070092424330}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundPlant_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 7960290840947769144}
   - component: {fileID: 2894729712387935555}
   - component: {fileID: 3491854447021796672}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundPlant_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 8929960924390339487}
   - component: {fileID: 7275447872798551309}
   - component: {fileID: 4735237487292028678}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundPlant_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

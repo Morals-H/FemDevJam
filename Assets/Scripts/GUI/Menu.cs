@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-
     public GameObject settingsMenu;
     public GameObject creditsMenu;
 
@@ -16,12 +15,12 @@ public class Menu : MonoBehaviour
 
     void Settings()
     {
-
+        settingsMenu.SetActive(true);
     }
 
     void Credits()
     {
-
+        creditsMenu.SetActive(true);
     }
 
     void Exit()
