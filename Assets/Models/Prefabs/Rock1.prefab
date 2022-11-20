@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 795256233235244334}
   - component: {fileID: 5571884016760017503}
-  - component: {fileID: 8129812124582135544}
+  - component: {fileID: 7271601947573663320}
   m_Layer: 3
   m_Name: Rock1
   m_TagString: Untagged
@@ -33,7 +33,6 @@ Transform:
   - {fileID: 5341781630444398749}
   - {fileID: 377860236103608103}
   - {fileID: 3950319489806492519}
-  - {fileID: 5641101172796751951}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -64,51 +63,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 5206715763111243717}
   m_Enabled: 1
---- !u!64 &8129812124582135544
-MeshCollider:
+--- !u!136 &7271601947573663320
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18720251652259732}
-  m_Material: {fileID: 13400000, guid: a0a39ce9a349ebe40a4f5b30b72ed417, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7485070583940626426, guid: 70ee15d5c3b841e4c8c5f7b4a07bda66, type: 3}
---- !u!1 &1673164621357948474
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5641101172796751951}
-  m_Layer: 3
-  m_Name: Rock1_MeshCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5641101172796751951
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673164621357948474}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 795256233235244334}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!1 &4163691538990962304
 GameObject:
   m_ObjectHideFlags: 0

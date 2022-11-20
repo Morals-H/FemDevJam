@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Actions : MonoBehaviour
 {
@@ -18,8 +19,9 @@ public class Player_Actions : MonoBehaviour
     //Animations
     private Animator anim;
     private Transform cam;
-    private float turnSmoothTime = 0.1f;
+    private float turnSmoothTime = 0.05f;
     private float turnSmoothVelocity;
+    private bool attackToggle;
 
     //stats
     public float curSpeed;
@@ -32,31 +34,84 @@ public class Player_Actions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         rig = GetComponent<Rigidbody>();
         cam = Camera.main.transform;
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        //sprint input
-        if (Input.GetAxis("Sprint") > 0)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            isSprinting = true;
+            SceneManager.LoadScene("MainMenu");
         }
-        else isSprinting = false;
+    }
+
+    public GameObject attack;
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+
+        if (transform.position.y == -50)
+        {
+            transform.position = new Vector3(0,10,0);
+        }
+
+        //Combat input
+        if (Input.GetAxis("Attack") > 0 && !attackToggle)
+        {
+            attackToggle = true;
+            anim.SetBool("Attack", true);
+            GameObject myChild = Instantiate(attack, transform.position, Quaternion.identity);
+            myChild.transform.parent = this.transform;
+
+            myChild.transform.localPosition = new Vector3(0,0,0.5f);
+
+        }
+        else if(Input.GetAxis("Attack") <= 0)
+        {
+            attackToggle = false;
+            anim.SetBool("Attack", false);
+        }
+        else anim.SetBool("Attack", false);
+
+        //aim input
+        if (Input.GetAxis("Aim") > 0)
+        {
+            anim.SetBool("Aim", true);
+        }
+        else
+        {
+            anim.SetBool("Aim", false);
+        }
 
         //Movement Input
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
 
+        //sprint input
+        if (Input.GetAxis("Sprint") > 0)
+        {
+            isSprinting = true;
+        }
+        else
+        {
+            isSprinting = false;
+        }
+
+        //changing player speed
         //setting animation
         if (movement == Vector2.zero)
         {
             anim.SetInteger("moveState", 0);
 
-            curSpeed = 0;
+            if (isGrounded)
+            {
+                curSpeed = 0;
+            }
         }
         else if (isSprinting)
         {
@@ -99,15 +154,6 @@ public class Player_Actions : MonoBehaviour
                 return;
             }
             else if (jumpState == 0) jumpState = 1;
-
-            if (jumpState == 1)
-            {
-                rig.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-
-                jumpState = 2;
-                return;
-            }
-
         }
         else if (Input.GetAxis("Jump") == 0) jumpToggle = false;
 

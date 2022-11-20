@@ -769,7 +769,6 @@ static string dots_lbs_cd_string = "DOTS|HR - Use Compute Deformation";
     //Disable DOTS Mesh Deformation[151]
     "Disable DOTS Mesh Deformation: 'Linear Blend Skinning and Compute Deformation'.\n\n*For Static Objects, enabled this."
 
-
 };
 
         #endregion

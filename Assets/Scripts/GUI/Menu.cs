@@ -8,6 +8,13 @@ public class Menu : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject creditsMenu;
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+
+    }
+
     void Play()
     {
         SceneManager.LoadScene("MainScene");
